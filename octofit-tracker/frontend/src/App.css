@@ -1,0 +1,72 @@
+.app-shell {
+  font-family: Inter, system-ui, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #20232a;
+}
+
+.app-header {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.app-header h1 {
+  margin: 0;
+}
+
+.app-subtitle {
+  margin: 0.5rem 0 1rem;
+  color: #545f7d;
+}
+
+.app-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.app-nav a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: 600;
+}
+
+.app-nav a.active {
+  color: #1d4ed8;
+}
+
+.api-banner,
+.env-note {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.api-banner code,
+.env-note code {
+  display: inline-block;
+  background: #f5f7fa;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.app-content section {
+  background: #fff;
+  border: 1px solid #e8ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.app-content h2 {
+  margin-top: 0;
+}
+
+.error {
+  border: 1px solid #fda4af;
+  background: #fef2f2;
+  color: #991b1b;
+  padding: 0.75rem;
+  border-radius: 6px;
+}

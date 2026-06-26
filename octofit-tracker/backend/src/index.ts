@@ -1,14 +1,15 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import routes from './routes';
+import { apiBaseUrl, mongoUri, port } from './config';
 
 const app = express();
-const port = 8000;
-const mongoUri = 'mongodb://127.0.0.1:27017/octofit_tracker';
 
 app.use(express.json());
+app.use('/api', routes);
 
 app.get('/health', (_, res) => {
-  res.json({ status: 'ok' });
+  res.json({ status: 'ok', apiBaseUrl, mongoUri });
 });
 
 mongoose
@@ -17,6 +18,7 @@ mongoose
     console.log('Connected to MongoDB at', mongoUri);
     app.listen(port, () => {
       console.log(`Backend listening on http://localhost:${port}`);
+      console.log(`API base URL: ${apiBaseUrl}`);
     });
   })
   .catch((error) => {

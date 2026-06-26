@@ -1,9 +1,13 @@
 import express from 'express';
 import routes from './routes';
-import { apiBaseUrl, port, mongoUri } from './config';
+import { port, mongoUri } from './config';
 import { connectDatabase } from './config/database';
 
 const app = express();
+
+const apiBaseUrl = process.env.CODESPACE_NAME
+  ? `https://${process.env.CODESPACE_NAME}-${port}.app.github.dev`
+  : `http://localhost:${port}`;
 
 app.use(express.json());
 app.use('/api', routes);

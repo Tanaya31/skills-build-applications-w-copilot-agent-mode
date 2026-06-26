@@ -6,7 +6,7 @@ import { connectDatabase } from './config/database';
 const app = express();
 
 const apiBaseUrl = process.env.CODESPACE_NAME
-  ? `https://${process.env.CODESPACE_NAME}-${port}.app.github.dev`
+  ? `https://${process.env.CODESPACE_NAME}-8000.app.github.dev`
   : `http://localhost:${port}`;
 
 app.use(express.json());

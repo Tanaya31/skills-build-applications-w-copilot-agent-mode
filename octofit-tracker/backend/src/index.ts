@@ -1,7 +1,7 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import routes from './routes';
-import { apiBaseUrl, mongoUri, port } from './config';
+import { apiBaseUrl, port } from './config';
+import { connectDatabase, mongoUri } from './database';
 
 const app = express();
 
@@ -12,8 +12,7 @@ app.get('/health', (_, res) => {
   res.json({ status: 'ok', apiBaseUrl, mongoUri });
 });
 
-mongoose
-  .connect(mongoUri)
+connectDatabase()
   .then(() => {
     console.log('Connected to MongoDB at', mongoUri);
     app.listen(port, () => {

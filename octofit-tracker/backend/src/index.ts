@@ -1,7 +1,7 @@
 import express from 'express';
 import routes from './routes';
 import { apiBaseUrl, port } from './config';
-import { connectDatabase, mongoUri } from '../database';
+import { connectDatabase, mongoUri } from './database';
 
 const app = express();
 
